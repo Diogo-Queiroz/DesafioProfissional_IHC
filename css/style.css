@@ -1,0 +1,29 @@
+@import url(http://fonts.googleapis.com/css?family=Montserrat);
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400);
+
+.conteudo {
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+}
+
+.cabecalho {
+    background-color: #FEAA15;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.card-panel {
+    height: 600px;
+    padding-left: 15px;
+    border-radius: 2%;
+}
+
+.footer {
+    background-color: #00843e;
+    text-align: center;
+    color: #dddddd;
+    height: 135px;
+}
+
+.footer a {
+    color: #eee;
+}
