@@ -11,6 +11,10 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+.cabecalho img {
+    width: 100%;
+}
+
 .card-panel {
     height: 600px;
     padding-left: 15px;
