@@ -9,35 +9,42 @@
 </head>
 
 <body>
-    <div class="container">
 
-        <div class="row cabecalho">
-            <div class="col-md-3">
+    <div class="row cabecalho">
+        <div class="container">
+            <div class="col-md-3 col-sm-4">
                 <div class="well-lg">
                     <img src="images/logo_gov_bsb.png" alt="Secretaria de Saúde do Distrito Federal" />
                 </div>
             </div>
             <div class="col-md-4"></div>
-            <div class="col-md-5">
+            <div class="col-md-5 col-sm-8">
                 <h5>Saúde</h5>
                 <h2>Secretaria de Estado de Saúde do Distrito Federal</h2>
             </div>
         </div>
-        <div class="row conteudo">
-            <div class="col-md-2">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Menu de Navegação</div>
-                    <div class="panel-body">
-                        <ul class="nav nav-pills nav-stacked">
-                            <li role="presentation"><a href="index.html"><span class="glyphicon glyphicon-home"></span>  Home</a></li>
-                            <li role="presentation"><a href="#"><span class="glyphicon glyphicon-cog"></span>  Tools</a></li>
-                            <li role="presentation" class="active"><a href="#"><span class="glyphicon glyphicon-search"></span>  Pesquisar</a></li>
-                            <li role="presentation"><a href="novaEscala.html"><span class="glyphicon glyphicon-plus"></span>  Nova Escala</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-10">
+    </div>
+
+    <div class="container">
+        <div class="col-md-6">
+            <ul class="nav nav-tabs">
+                <li role="presentation"><a href="index.html"><span class="glyphicon glyphicon-home"></span>  Home</a></li>
+                <li role="presentation"><a href="relatorios.html"><span class="glyphicon glyphicon-list-alt"></span>  Relatórios</a></li>
+                <li role="presentation" class="active"><a href="pesquisa.html"><span class="glyphicon glyphicon-search"></span>  Pesquisar</a></li>
+                <li role="presentation"><a href="novaEscala.html"><span class="glyphicon glyphicon-plus"></span>  Nova Escala</a></li>
+            </ul>
+        </div>
+        <div class="col-md-offset-6">
+            <ul class="nav nav-tabs right">
+                <li role="presentation"><a href="legendas.html"><span class="glyphicon glyphicon-pencil"></span>  Legendas</a></li>
+                <li role="presentation"><a href="legendas.html"><span class="glyphicon glyphicon-user"></span>  Administrar Usuários</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="row conteudo">
+
+        <div class="container">
                 <div class="row">
                     <div class="col-md-7">
                         <div class="panel panel-default">
@@ -48,21 +55,51 @@
                                     <div class="form-group">
                                         <label for="inputSetor" class="col-sm-3 control-label">Setor</label>
                                         <div class="col-sm-8">
-                                            <input type="text" class="form-control" id="inputsetor" placeholder="Setor">
+                                            <select class="form-control" id="inputSetor">
+                                                <option>Setor</option>
+                                                <option>Cardiologia</option>
+                                                <option>UTI</option>
+                                                <option>Enfermaria</option>
+                                            </select>
                                         </div>
                                     </div>
 
                                     <div class="form-group">
                                         <label for="inputMes" class="col-sm-3 control-label">Mês</label>
                                         <div class="col-sm-8">
-                                            <input type="text" class="form-control" id="inputMes" placeholder="Mês">
+                                            <select class="form-control" id="inputMes">
+                                                <option>Mês</option>
+                                                <option>01 - Janeiro</option>
+                                                <option>02 - Fevereiro</option>
+                                                <option>03 - Março</option>
+                                                <option>04 - Abril</option>
+                                                <option>05 - Maio</option>
+                                                <option>06 - Junho</option>
+                                                <option>07 - Julho</option>
+                                                <option>08 - Agosto</option>
+                                                <option>09 - Setembro</option>
+                                                <option>10 - Outubro</option>
+                                                <option>11 - Novembro</option>
+                                                <option>12 - Dezembro</option>
+                                            </select>
                                         </div>
                                     </div>
 
                                     <div class="form-group">
                                         <label for="inputAno" class="col-sm-3 control-label">Ano</label>
                                         <div class="col-sm-8">
-                                            <input type="text" class="form-control" id="inputAno" placeholder="Ano">
+                                            <input type="text" class="form-control" id="inputAno" placeholder="____">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <div class="input-group-addon">
+                                                <input type="radio" aria-label="...">
+                                                <div class="col-sm-8">
+                                                    <input type="text" class="form-control" placeholder="Finalizado">
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
 
@@ -113,786 +150,145 @@
                             </div>
                         </div>
                     </div>
-                        <div class="col-md-12">
-                            <div class="panel panel-default">
-                                <div class="panel-heading">Tabela de Escalas</div>
-                                <div class="panel-body">
-                                    <div class="panel panel-default">
-
-                                        <!-- Manhã -->
-                                        <div class="panel panel-heading">Manhã</div>
-                                        <div class="panel panel-body">
-                                            <table class="table table-hover">
-                                                <thead>
-                                                    <tr class="info">
-                                                        <th>Dia</th>
-                                                        <th>Local</th>
-                                                        <th>Legenda</th>
-                                                        <th>Extra</th>
-                                                        <th>Auto</th>
-                                                        <th>Serviços</th>
-                                                        <th>Sel Serv</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td>Domingo</td>
-                                                        <td><span class="glyphicon glyphicon-search"></span></td>
-                                                        <td><span class="glyphicon glyphicon-search"></span></td>
-                                                        <td>
-                                                            <div class="checkbox">
-                                                                <label>
-                                                                    <input type="checkbox" value="">
-                                                                </label>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="checkbox">
-                                                                <label>
-                                                                    <input type="checkbox" value="">
-                                                                </label>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="checkbox">
-                                                                <label>
-                                                                    <input type="checkbox" value="">
-                                                                </label>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="checkbox">
-                                                                <label>
-                                                                    <input type="checkbox" value="">
-                                                                </label>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Segunda</td>
-                                                        <td><span class="glyphicon glyphicon-search"></span></td>
-                                                        <td><span class="glyphicon glyphicon-search"></span></td>
-                                                        <td>
-                                                            <div class="checkbox">
-                                                                <label>
-                                                                    <input type="checkbox" value="">
-                                                                </label>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="checkbox">
-                                                                <label>
-                                                                    <input type="checkbox" value="">
-                                                                </label>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="checkbox">
-                                                                <label>
-                                                                    <input type="checkbox" value="">
-                                                                </label>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="checkbox">
-                                                                <label>
-                                                                    <input type="checkbox" value="">
-                                                                </label>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Terça</td>
-                                                        <td><span class="glyphicon glyphicon-search"></span></td>
-                                                        <td><span class="glyphicon glyphicon-search"></span></td>
-                                                        <td>
-                                                            <div class="checkbox">
-                                                                <label>
-                                                                    <input type="checkbox" value="">
-                                                                </label>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="checkbox">
-                                                                <label>
-                                                                    <input type="checkbox" value="">
-                                                                </label>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="checkbox">
-                                                                <label>
-                                                                    <input type="checkbox" value="">
-                                                                </label>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="checkbox">
-                                                                <label>
-                                                                    <input type="checkbox" value="">
-                                                                </label>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Quarta</td>
-                                                        <td><span class="glyphicon glyphicon-search"></span></td>
-                                                        <td><span class="glyphicon glyphicon-search"></span></td>
-                                                        <td>
-                                                            <div class="checkbox">
-                                                                <label>
-                                                                    <input type="checkbox" value="">
-                                                                </label>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="checkbox">
-                                                                <label>
-                                                                    <input type="checkbox" value="">
-                                                                </label>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="checkbox">
-                                                                <label>
-                                                                    <input type="checkbox" value="">
-                                                                </label>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="checkbox">
-                                                                <label>
-                                                                    <input type="checkbox" value="">
-                                                                </label>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Quinta</td>
-                                                        <td><span class="glyphicon glyphicon-search"></span></td>
-                                                        <td><span class="glyphicon glyphicon-search"></span></td>
-                                                        <td>
-                                                            <div class="checkbox">
-                                                                <label>
-                                                                    <input type="checkbox" value="">
-                                                                </label>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="checkbox">
-                                                                <label>
-                                                                    <input type="checkbox" value="">
-                                                                </label>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="checkbox">
-                                                                <label>
-                                                                    <input type="checkbox" value="">
-                                                                </label>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="checkbox">
-                                                                <label>
-                                                                    <input type="checkbox" value="">
-                                                                </label>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Sexta</td>
-                                                        <td><span class="glyphicon glyphicon-search"></span></td>
-                                                        <td><span class="glyphicon glyphicon-search"></span></td>
-                                                        <td>
-                                                            <div class="checkbox">
-                                                                <label>
-                                                                    <input type="checkbox" value="">
-                                                                </label>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="checkbox">
-                                                                <label>
-                                                                    <input type="checkbox" value="">
-                                                                </label>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="checkbox">
-                                                                <label>
-                                                                    <input type="checkbox" value="">
-                                                                </label>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="checkbox">
-                                                                <label>
-                                                                    <input type="checkbox" value="">
-                                                                </label>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Sábado</td>
-                                                        <td><span class="glyphicon glyphicon-search"></span></td>
-                                                        <td><span class="glyphicon glyphicon-search"></span></td>
-                                                        <td>
-                                                            <div class="checkbox">
-                                                                <label>
-                                                                    <input type="checkbox" value="">
-                                                                </label>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="checkbox">
-                                                                <label>
-                                                                    <input type="checkbox" value="">
-                                                                </label>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="checkbox">
-                                                                <label>
-                                                                    <input type="checkbox" value="">
-                                                                </label>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="checkbox">
-                                                                <label>
-                                                                    <input type="checkbox" value="">
-                                                                </label>
-                                                            </div>
-                                                        </td>
-
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-
-                                    <!-- Tarde -->
-                                    <div class="panel panel-default">
-                                        <div class="panel panel-heading">Tarde</div>
-                                        <div class="panel panel-body">
-                                            <table class="table table-hover">
-                                                <thead>
-                                                <tr class="info">
-                                                    <th>Dia</th>
-                                                    <th>Local</th>
-                                                    <th>Legenda</th>
-                                                    <th>Extra</th>
-                                                    <th>Auto</th>
-                                                    <th>Serviços</th>
-                                                    <th>Sel Serv</th>
-                                                </tr>
-                                                </thead>
-                                                <tbody>
-                                                <tr>
-                                                    <td>Domingo</td>
-                                                    <td><span class="glyphicon glyphicon-search"></span></td>
-                                                    <td><span class="glyphicon glyphicon-search"></span></td>
-                                                    <td>
-                                                        <div class="checkbox">
-                                                            <label>
-                                                                <input type="checkbox" value="">
-                                                            </label>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="checkbox">
-                                                            <label>
-                                                                <input type="checkbox" value="">
-                                                            </label>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="checkbox">
-                                                            <label>
-                                                                <input type="checkbox" value="">
-                                                            </label>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="checkbox">
-                                                            <label>
-                                                                <input type="checkbox" value="">
-                                                            </label>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Segunda</td>
-                                                    <td><span class="glyphicon glyphicon-search"></span></td>
-                                                    <td><span class="glyphicon glyphicon-search"></span></td>
-                                                    <td>
-                                                        <div class="checkbox">
-                                                            <label>
-                                                                <input type="checkbox" value="">
-                                                            </label>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="checkbox">
-                                                            <label>
-                                                                <input type="checkbox" value="">
-                                                            </label>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="checkbox">
-                                                            <label>
-                                                                <input type="checkbox" value="">
-                                                            </label>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="checkbox">
-                                                            <label>
-                                                                <input type="checkbox" value="">
-                                                            </label>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Terça</td>
-                                                    <td><span class="glyphicon glyphicon-search"></span></td>
-                                                    <td><span class="glyphicon glyphicon-search"></span></td>
-                                                    <td>
-                                                        <div class="checkbox">
-                                                            <label>
-                                                                <input type="checkbox" value="">
-                                                            </label>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="checkbox">
-                                                            <label>
-                                                                <input type="checkbox" value="">
-                                                            </label>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="checkbox">
-                                                            <label>
-                                                                <input type="checkbox" value="">
-                                                            </label>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="checkbox">
-                                                            <label>
-                                                                <input type="checkbox" value="">
-                                                            </label>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Quarta</td>
-                                                    <td><span class="glyphicon glyphicon-search"></span></td>
-                                                    <td><span class="glyphicon glyphicon-search"></span></td>
-                                                    <td>
-                                                        <div class="checkbox">
-                                                            <label>
-                                                                <input type="checkbox" value="">
-                                                            </label>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="checkbox">
-                                                            <label>
-                                                                <input type="checkbox" value="">
-                                                            </label>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="checkbox">
-                                                            <label>
-                                                                <input type="checkbox" value="">
-                                                            </label>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="checkbox">
-                                                            <label>
-                                                                <input type="checkbox" value="">
-                                                            </label>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Quinta</td>
-                                                    <td><span class="glyphicon glyphicon-search"></span></td>
-                                                    <td><span class="glyphicon glyphicon-search"></span></td>
-                                                    <td>
-                                                        <div class="checkbox">
-                                                            <label>
-                                                                <input type="checkbox" value="">
-                                                            </label>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="checkbox">
-                                                            <label>
-                                                                <input type="checkbox" value="">
-                                                            </label>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="checkbox">
-                                                            <label>
-                                                                <input type="checkbox" value="">
-                                                            </label>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="checkbox">
-                                                            <label>
-                                                                <input type="checkbox" value="">
-                                                            </label>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Sexta</td>
-                                                    <td><span class="glyphicon glyphicon-search"></span></td>
-                                                    <td><span class="glyphicon glyphicon-search"></span></td>
-                                                    <td>
-                                                        <div class="checkbox">
-                                                            <label>
-                                                                <input type="checkbox" value="">
-                                                            </label>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="checkbox">
-                                                            <label>
-                                                                <input type="checkbox" value="">
-                                                            </label>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="checkbox">
-                                                            <label>
-                                                                <input type="checkbox" value="">
-                                                            </label>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="checkbox">
-                                                            <label>
-                                                                <input type="checkbox" value="">
-                                                            </label>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Sábado</td>
-                                                    <td><span class="glyphicon glyphicon-search"></span></td>
-                                                    <td><span class="glyphicon glyphicon-search"></span></td>
-                                                    <td>
-                                                        <div class="checkbox">
-                                                            <label>
-                                                                <input type="checkbox" value="">
-                                                            </label>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="checkbox">
-                                                            <label>
-                                                                <input type="checkbox" value="">
-                                                            </label>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="checkbox">
-                                                            <label>
-                                                                <input type="checkbox" value="">
-                                                            </label>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="checkbox">
-                                                            <label>
-                                                                <input type="checkbox" value="">
-                                                            </label>
-                                                        </div>
-                                                    </td>
-
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-
-                                    <!-- Noite -->
-                                    <div class="panel panel-default">
-                                        <div class="panel panel-heading">Noite</div>
-                                        <div class="panel panel-body">
-                                            <table class="table table-hover">
-                                                <thead>
-                                                <tr class="info">
-                                                    <th>Dia</th>
-                                                    <th>Local</th>
-                                                    <th>Legenda</th>
-                                                    <th>Extra</th>
-                                                    <th>Auto</th>
-                                                    <th>Serviços</th>
-                                                    <th>Sel Serv</th>
-                                                </tr>
-                                                </thead>
-                                                <tbody>
-                                                <tr>
-                                                    <td>Domingo</td>
-                                                    <td><span class="glyphicon glyphicon-search"></span></td>
-                                                    <td><span class="glyphicon glyphicon-search"></span></td>
-                                                    <td>
-                                                        <div class="checkbox">
-                                                            <label>
-                                                                <input type="checkbox" value="">
-                                                            </label>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="checkbox">
-                                                            <label>
-                                                                <input type="checkbox" value="">
-                                                            </label>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="checkbox">
-                                                            <label>
-                                                                <input type="checkbox" value="">
-                                                            </label>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="checkbox">
-                                                            <label>
-                                                                <input type="checkbox" value="">
-                                                            </label>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Segunda</td>
-                                                    <td><span class="glyphicon glyphicon-search"></span></td>
-                                                    <td><span class="glyphicon glyphicon-search"></span></td>
-                                                    <td>
-                                                        <div class="checkbox">
-                                                            <label>
-                                                                <input type="checkbox" value="">
-                                                            </label>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="checkbox">
-                                                            <label>
-                                                                <input type="checkbox" value="">
-                                                            </label>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="checkbox">
-                                                            <label>
-                                                                <input type="checkbox" value="">
-                                                            </label>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="checkbox">
-                                                            <label>
-                                                                <input type="checkbox" value="">
-                                                            </label>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Terça</td>
-                                                    <td><span class="glyphicon glyphicon-search"></span></td>
-                                                    <td><span class="glyphicon glyphicon-search"></span></td>
-                                                    <td>
-                                                        <div class="checkbox">
-                                                            <label>
-                                                                <input type="checkbox" value="">
-                                                            </label>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="checkbox">
-                                                            <label>
-                                                                <input type="checkbox" value="">
-                                                            </label>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="checkbox">
-                                                            <label>
-                                                                <input type="checkbox" value="">
-                                                            </label>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="checkbox">
-                                                            <label>
-                                                                <input type="checkbox" value="">
-                                                            </label>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Quarta</td>
-                                                    <td><span class="glyphicon glyphicon-search"></span></td>
-                                                    <td><span class="glyphicon glyphicon-search"></span></td>
-                                                    <td>
-                                                        <div class="checkbox">
-                                                            <label>
-                                                                <input type="checkbox" value="">
-                                                            </label>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="checkbox">
-                                                            <label>
-                                                                <input type="checkbox" value="">
-                                                            </label>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="checkbox">
-                                                            <label>
-                                                                <input type="checkbox" value="">
-                                                            </label>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="checkbox">
-                                                            <label>
-                                                                <input type="checkbox" value="">
-                                                            </label>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Quinta</td>
-                                                    <td><span class="glyphicon glyphicon-search"></span></td>
-                                                    <td><span class="glyphicon glyphicon-search"></span></td>
-                                                    <td>
-                                                        <div class="checkbox">
-                                                            <label>
-                                                                <input type="checkbox" value="">
-                                                            </label>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="checkbox">
-                                                            <label>
-                                                                <input type="checkbox" value="">
-                                                            </label>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="checkbox">
-                                                            <label>
-                                                                <input type="checkbox" value="">
-                                                            </label>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="checkbox">
-                                                            <label>
-                                                                <input type="checkbox" value="">
-                                                            </label>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Sexta</td>
-                                                    <td><span class="glyphicon glyphicon-search"></span></td>
-                                                    <td><span class="glyphicon glyphicon-search"></span></td>
-                                                    <td>
-                                                        <div class="checkbox">
-                                                            <label>
-                                                                <input type="checkbox" value="">
-                                                            </label>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="checkbox">
-                                                            <label>
-                                                                <input type="checkbox" value="">
-                                                            </label>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="checkbox">
-                                                            <label>
-                                                                <input type="checkbox" value="">
-                                                            </label>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="checkbox">
-                                                            <label>
-                                                                <input type="checkbox" value="">
-                                                            </label>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Sábado</td>
-                                                    <td><span class="glyphicon glyphicon-search"></span></td>
-                                                    <td><span class="glyphicon glyphicon-search"></span></td>
-                                                    <td>
-                                                        <div class="checkbox">
-                                                            <label>
-                                                                <input type="checkbox" value="">
-                                                            </label>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="checkbox">
-                                                            <label>
-                                                                <input type="checkbox" value="">
-                                                            </label>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="checkbox">
-                                                            <label>
-                                                                <input type="checkbox" value="">
-                                                            </label>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="checkbox">
-                                                            <label>
-                                                                <input type="checkbox" value="">
-                                                            </label>
-                                                        </div>
-                                                    </td>
-
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
+                    <div class="col-md-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">Tabela de Escalas</div>
+                                <div class="panel panel-body">
+                                    <table class="table table-hover">
+                                        <thead>
+                                        <tr class="info">
+                                            <th rowspan="2">Dia da Semana</th>
+                                            <th colspan="2">Semana 1</th>
+                                            <th colspan="2">Semana 2</th>
+                                            <th colspan="2">Semana 3</th>
+                                            <th colspan="2">Semana 4</th>
+                                            <th colspan="2">Semana 5</th>
+                                        </tr>
+                                        <tr class="info">
+                                            <th>Dia</th>
+                                            <th>Legenda</th>
+                                            <th>Dia</th>
+                                            <th>Legenda</th>
+                                            <th>Dia</th>
+                                            <th>Legenda</th>
+                                            <th>Dia</th>
+                                            <th>Legenda</th>
+                                            <th>Dia</th>
+                                            <th>Legenda</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Domingo</td>
+                                                <td>24</td>
+                                                <td><input type="text"></td>
+                                                <td>03</td>
+                                                <td><input type="text"></td>
+                                                <td>10</td>
+                                                <td><input type="text"></td>
+                                                <td>17</td>
+                                                <td><input type="text"></td>
+                                                <td>24</td>
+                                                <td><input type="text"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Segunda</td>
+                                                <td>25</td>
+                                                <td><input type="text"></td>
+                                                <td>04</td>
+                                                <td><input type="text"></td>
+                                                <td>11</td>
+                                                <td><input type="text"></td>
+                                                <td>18</td>
+                                                <td><input type="text"></td>
+                                                <td>25</td>
+                                                <td><input type="text"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Terça</td>
+                                                <td>26</td>
+                                                <td><input type="text"></td>
+                                                <td>05</td>
+                                                <td><input type="text"></td>
+                                                <td>12</td>
+                                                <td><input type="text"></td>
+                                                <td>19</td>
+                                                <td><input type="text"></td>
+                                                <td>26</td>
+                                                <td><input type="text"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Quarta</td>
+                                                <td>27</td>
+                                                <td><input type="text"></td>
+                                                <td>06</td>
+                                                <td><input type="text"></td>
+                                                <td>13</td>
+                                                <td><input type="text"></td>
+                                                <td>20</td>
+                                                <td><input type="text"></td>
+                                                <td>27</td>
+                                                <td><input type="text"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Quinta</td>
+                                                <td>28</td>
+                                                <td><input type="text"></td>
+                                                <td>07</td>
+                                                <td><input type="text"></td>
+                                                <td>14</td>
+                                                <td><input type="text"></td>
+                                                <td>21</td>
+                                                <td><input type="text"></td>
+                                                <td>28</td>
+                                                <td><input type="text"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Sexta</td>
+                                                <td>01</td>
+                                                <td><input type="text"></td>
+                                                <td>08</td>
+                                                <td><input type="text"></td>
+                                                <td>15</td>
+                                                <td><input type="text"></td>
+                                                <td>22</td>
+                                                <td><input type="text"></td>
+                                                <td>29</td>
+                                                <td><input type="text"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Sábado</td>
+                                                <td>02</td>
+                                                <td><input type="text"></td>
+                                                <td>09</td>
+                                                <td><input type="text"></td>
+                                                <td>16</td>
+                                                <td><input type="text"></td>
+                                                <td>23</td>
+                                                <td><input type="text"></td>
+                                                <td>30</td>
+                                                <td><input type="text"></td>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                         </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="footer">
+
+        <footer class="footer">
+            <div class="container">
                 <small>Secretaria de Estado de Saúde do Distrito Federal<br>
-                Setor de Áreas Isoladas Norte - SAIN - Fim da Asa Norte Bloco B  -  (antigo prédio da Câmara Legislativa) - CEP: 70086-900<br>
-                Telefone: 160  | E-mail <a href="mailto:ouvidoria@saude.df.gov.br">ouvidoria@saude.df.gov.br</a><br>
-                2012 Governo do Distrito Federal</small><br>
+                    Setor de Áreas Isoladas Norte - SAIN - Fim da Asa Norte Bloco B  -  (antigo prédio da Câmara Legislativa) - CEP: 70086-900<br>
+                    Telefone: 160  | E-mail <a href="mailto:ouvidoria@saude.df.gov.br">ouvidoria@saude.df.gov.br</a><br>
+                    2012 Governo do Distrito Federal</small><br>
                 <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/br" style="background-color: transparent;" target="_blank"><img alt="Licença Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-nd/3.0/80x15.png"></a><br>
                 <a href="http://validator.w3.org/check?uri=referer" target="_blank"></a>
                 <a href="http://www.df.gov.br" rel="dct:source">http://www.df.gov.br</a>.
             </div>
-        </div>
+        </footer>
     </div>
 </body>
 </html>

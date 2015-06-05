@@ -24,6 +24,16 @@
     height: 135px;
 }
 
+.home {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.right {
+    float: right;
+}
+
 .footer a {
     color: #eee;
 }
